@@ -3,12 +3,14 @@ pipeline{
 
 	stages{
 		stage("Start selenium grid"){
-			bat "docker compose -f grid.yaml up -d"
-
+			steps{
+				bat "docker compose -f grid.yaml up -d"
+			}
 		}
 		stage("Run Test suites"){
-			bat "docker compose -f test-suites.yaml up"
-
+			steps{
+				bat "docker compose -f test-suites.yaml up"
+			}
 		}
 	}
 
