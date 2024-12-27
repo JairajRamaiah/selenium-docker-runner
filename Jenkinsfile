@@ -9,7 +9,7 @@ pipeline{
 		}
 		stage("Run Test suites"){
 			steps{
-				bat "docker compose -f test-suites.yaml up"
+				bat "docker compose -f test-suites.yaml up --pull=always"
 			}
 		}
 	}
